@@ -15,13 +15,12 @@ Ambiente local de desenvolvimento com Drupal 11, Apache, PHP e MariaDB.
    docker compose up --build -d
    ```
 
-3. Descubra a porta que o Docker reservou para o Drupal:
+3. Acesse o Drupal em:
 
-   ```powershell
-   docker compose port drupal 80
-   ```
+   `http://localhost:8088`
 
-   Acesse `http://localhost:<porta-exibida>` e conclua o instalador do Drupal. A porta é atribuída automaticamente para evitar conflito com outros serviços locais.
+   Conclua o instalador do Drupal. Se a porta `8088` estiver ocupada, defina
+   outro valor para `DRUPAL_PORT` no arquivo `.env` e use essa porta no acesso.
 
 Na etapa do banco de dados, selecione **MySQL, MariaDB, Percona Server ou equivalente** e use:
 

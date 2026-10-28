@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "127.0.0.1::80"
+      - "127.0.0.1:${DRUPAL_PORT:-8088}:80"
     environment:
       DRUPAL_DB_HOST: db
       DRUPAL_DB_NAME: ${DB_NAME:-drupal}
