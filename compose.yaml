@@ -12,6 +12,10 @@ services:
       DRUPAL_DB_NAME: ${DB_NAME:-drupal}
       DRUPAL_DB_USER: ${DB_USER:-drupal}
       DRUPAL_DB_PASSWORD: ${DB_PASSWORD:-local_dev_password}
+      GOVBR_ENABLED: ${GOVBR_ENABLED:-false}
+      GOVBR_ENVIRONMENT: ${GOVBR_ENVIRONMENT:-staging}
+      GOVBR_CLIENT_ID: ${GOVBR_CLIENT_ID:-}
+      GOVBR_CLIENT_SECRET: ${GOVBR_CLIENT_SECRET:-}
     volumes:
       - drupal_sites:/opt/drupal/web/sites
       - ./web/modules/custom:/opt/drupal/web/modules/custom

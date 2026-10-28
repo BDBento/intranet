@@ -1,0 +1,8 @@
+name: Intranet MS - Autenticação Gov.br
+type: module
+description: 'Prepara a autenticação da Intranet MS por OpenID Connect com o Gov.br.'
+package: Governo de Mato Grosso do Sul
+core_version_requirement: ^11
+
+dependencies:
+  - openid_connect:openid_connect

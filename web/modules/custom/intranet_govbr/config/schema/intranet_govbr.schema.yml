@@ -1,0 +1,43 @@
+openid_connect.client.plugin.govbr:
+  type: mapping
+  label: 'Configuração do cliente Gov.br'
+  mapping:
+    client_id:
+      type: string
+      label: 'Client ID'
+    client_secret:
+      type: string
+      label: 'Client secret'
+    provider_slug:
+      type: string
+      label: 'Identificador da URL de retorno'
+    iss_allowed_domains:
+      type: string
+      label: 'Domínios autorizados a iniciar SSO'
+    prompt:
+      type: sequence
+      label: 'Prompt de autenticação'
+      sequence:
+        type: string
+        label: 'Opção de prompt'
+    issuer_url:
+      type: string
+      label: 'Emissor'
+    authorization_endpoint:
+      type: string
+      label: 'Endpoint de autorização'
+    token_endpoint:
+      type: string
+      label: 'Endpoint de token'
+    userinfo_endpoint:
+      type: string
+      label: 'Endpoint UserInfo'
+    end_session_endpoint:
+      type: string
+      label: 'Endpoint de encerramento de sessão'
+    scopes:
+      type: sequence
+      label: 'Escopos'
+      sequence:
+        type: string
+        label: 'Escopo'

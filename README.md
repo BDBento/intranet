@@ -47,6 +47,16 @@ O módulo instala o bloco **Intranet MS: acessos rápidos** na região
 `Início - acessos rápidos`. Para editar seus itens, acesse **Estrutura > Layout
 de blocos**, localize o bloco e selecione **Configurar**.
 
+## Autenticação Gov.br
+
+O projeto inclui uma preparação desabilitada para autenticação OpenID Connect
+com o Gov.br. As credenciais não ficam no Git e a integração não deve ser
+ativada sem cadastro, homologação e uma regra institucional que confirme o
+vínculo do usuário com o Governo de Mato Grosso do Sul.
+
+Consulte [docs/autenticacao-govbr.md](docs/autenticacao-govbr.md) antes de
+habilitar o módulo **Intranet MS - Autenticação Gov.br**.
+
 ## Persistência e desenvolvimento
 
 - `db_data`: banco de dados MariaDB.
