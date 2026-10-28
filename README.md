@@ -35,6 +35,18 @@ Na etapa do banco de dados, selecione **MySQL, MariaDB, Percona Server ou equiva
 
 Se você definiu valores em `.env`, use `DB_NAME`, `DB_USER` e `DB_PASSWORD` no instalador. O host do banco continua `db`.
 
+## Ativar o tema e os recursos da intranet
+
+Depois de concluir o instalador:
+
+1. Acesse **Aparência** e instale o tema **Intranet MS**.
+2. Defina **Intranet MS** como tema padrão.
+3. Acesse **Estender** e habilite o módulo **Intranet MS - Recursos**.
+
+O módulo instala o bloco **Intranet MS: acessos rápidos** na região
+`Início - acessos rápidos`. Para editar seus itens, acesse **Estrutura > Layout
+de blocos**, localize o bloco e selecione **Configurar**.
+
 ## Persistência e desenvolvimento
 
 - `db_data`: banco de dados MariaDB.

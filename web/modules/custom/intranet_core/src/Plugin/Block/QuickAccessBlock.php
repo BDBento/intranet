@@ -31,32 +31,7 @@ final class QuickAccessBlock extends BlockBase {
    */
   public function defaultConfiguration(): array {
     return [
-      'items' => [
-        [
-          'symbol' => 'SC',
-          'title' => 'Sistemas corporativos',
-          'description' => 'Aplicações utilizadas no dia a dia.',
-          'url' => '/sistemas',
-        ],
-        [
-          'symbol' => 'GP',
-          'title' => 'Gestão de pessoas',
-          'description' => 'Serviços e informações funcionais.',
-          'url' => '/gestao-de-pessoas',
-        ],
-        [
-          'symbol' => 'DN',
-          'title' => 'Documentos e normas',
-          'description' => 'Manuais, formulários e legislação.',
-          'url' => '/documentos',
-        ],
-        [
-          'symbol' => 'TI',
-          'title' => 'Suporte de TI',
-          'description' => 'Atendimento e orientação técnica.',
-          'url' => '/suporte',
-        ],
-      ],
+      'items' => [],
     ] + parent::defaultConfiguration();
   }
 
