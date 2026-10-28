@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Editable quick access cards.
+ */
+#}
+{% if items %}
+  <div class="quick-access-grid">
+    {% for item in items %}
+      <a class="quick-access-card" href="{{ item.url }}">
+        <span class="quick-access-card__icon" aria-hidden="true">
+          {{ item.symbol ?: loop.index }}
+        </span>
+        <span class="quick-access-card__content">
+          <strong class="quick-access-card__title">{{ item.title }}</strong>
+          {% if item.description %}
+            <span class="quick-access-card__description">{{ item.description }}</span>
+          {% endif %}
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}

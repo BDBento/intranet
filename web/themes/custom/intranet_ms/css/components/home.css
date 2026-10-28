@@ -123,6 +123,19 @@
   border: 1px solid var(--ms-color-border);
   border-radius: var(--ms-radius-md);
   box-shadow: var(--ms-shadow-sm);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--ms-transition-fast),
+    box-shadow var(--ms-transition-fast),
+    transform var(--ms-transition-fast);
+}
+
+.quick-access-card:hover {
+  color: inherit;
+  border-color: var(--ms-color-primary-500);
+  box-shadow: var(--ms-shadow-md);
+  transform: translateY(-0.15rem);
 }
 
 .quick-access-card h3 {
@@ -132,6 +145,22 @@
 
 .quick-access-card p {
   margin: 0;
+  color: var(--ms-color-text-muted);
+  font-size: var(--ms-font-size-sm);
+}
+
+.quick-access-card__content {
+  display: grid;
+  gap: var(--ms-space-2);
+}
+
+.quick-access-card__title {
+  color: var(--ms-color-neutral-900);
+  font-size: var(--ms-font-size-lg);
+  line-height: var(--ms-line-height-tight);
+}
+
+.quick-access-card__description {
   color: var(--ms-color-text-muted);
   font-size: var(--ms-font-size-sm);
 }

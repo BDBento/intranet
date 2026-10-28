@@ -12,6 +12,8 @@ compatível com Drupal 11.
 - Base de foco visível, link de salto e mensagens do Drupal.
 - Página inicial com regiões próprias para apresentação, busca, acessos rápidos,
   comunicados, notícias e agenda.
+- Acessos rápidos editáveis por meio do bloco fornecido pelo módulo
+  `intranet_core`.
 
 ## Design System MS
 

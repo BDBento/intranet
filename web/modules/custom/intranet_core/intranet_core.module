@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks for the Intranet MS resources module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_theme().
+ */
+function intranet_core_theme($existing, $type, $theme, $path): array {
+  return [
+    'intranet_quick_access' => [
+      'variables' => [
+        'items' => [],
+      ],
+      'template' => 'intranet-quick-access',
+    ],
+  ];
+}

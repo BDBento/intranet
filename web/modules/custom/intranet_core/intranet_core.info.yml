@@ -1,0 +1,8 @@
+name: Intranet MS - Recursos
+type: module
+description: 'Fornece componentes administráveis para a Intranet MS.'
+package: Governo de Mato Grosso do Sul
+core_version_requirement: ^11
+
+dependencies:
+  - drupal:block

@@ -4,7 +4,7 @@ description: 'Tema institucional da Intranet do Governo do Estado de Mato Grosso
 package: Governo de Mato Grosso do Sul
 core_version_requirement: ^11
 base theme: false
-version: 0.2.0
+version: 0.3.0
 
 libraries:
   - intranet_ms/global

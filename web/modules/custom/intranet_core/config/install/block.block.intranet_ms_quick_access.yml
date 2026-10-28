@@ -1,0 +1,40 @@
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - intranet_core
+  theme:
+    - intranet_ms
+id: intranet_ms_quick_access
+theme: intranet_ms
+region: quick_access
+weight: 0
+provider: null
+plugin: intranet_quick_access
+settings:
+  id: intranet_quick_access
+  label: 'Acessos rápidos'
+  label_display: '0'
+  provider: intranet_core
+  items:
+    -
+      symbol: SC
+      title: 'Sistemas corporativos'
+      description: 'Aplicações utilizadas no dia a dia.'
+      url: /sistemas
+    -
+      symbol: GP
+      title: 'Gestão de pessoas'
+      description: 'Serviços e informações funcionais.'
+      url: /gestao-de-pessoas
+    -
+      symbol: DN
+      title: 'Documentos e normas'
+      description: 'Manuais, formulários e legislação.'
+      url: /documentos
+    -
+      symbol: TI
+      title: 'Suporte de TI'
+      description: 'Atendimento e orientação técnica.'
+      url: /suporte
+visibility: {  }
