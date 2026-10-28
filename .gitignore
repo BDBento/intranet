@@ -1,0 +1,26 @@
+# Local environment and credentials.
+.env
+.env.*
+!.env.example
+
+# Runtime files and local Drupal state.
+web/sites/*/files/
+web/sites/*/private/
+web/sites/*/settings.php
+web/sites/*/services.yml
+
+# Dependencies and generated Drupal code, when present on the host.
+vendor/
+web/core/
+web/modules/contrib/
+web/themes/contrib/
+
+# Database exports must be reviewed before they are versioned.
+*.sql
+*.sql.gz
+
+# Local editor and operating-system metadata.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

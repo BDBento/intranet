@@ -1,0 +1,99 @@
+{#
+/**
+ * @file
+ * Main page template for the Intranet MS theme.
+ */
+#}
+<div class="site-shell">
+  <a class="skip-link visually-hidden-focusable" href="#main-content">
+    {{ 'Ir para o conteúdo principal'|t }}
+  </a>
+
+  <header class="site-header" role="banner">
+    {% if page.utility_bar %}
+      <div class="utility-bar">
+        <div class="container utility-bar__inner">
+          {{ page.utility_bar }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="container site-header__inner">
+      <div class="site-header__brand">
+        {{ page.header }}
+      </div>
+
+      {% if page.primary_menu %}
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="menu-toggle__icon" aria-hidden="true"></span>
+          <span>{{ 'Menu'|t }}</span>
+        </button>
+      {% endif %}
+    </div>
+
+    {% if page.primary_menu %}
+      <nav id="primary-navigation" class="primary-navigation" aria-label="{{ 'Navegação principal'|t }}">
+        <div class="container">
+          {{ page.primary_menu }}
+        </div>
+      </nav>
+    {% endif %}
+  </header>
+
+  {% if page.breadcrumb %}
+    <div class="breadcrumb-region">
+      <div class="container">
+        {{ page.breadcrumb }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.highlighted %}
+    <div class="container highlighted-region">
+      {{ page.highlighted }}
+    </div>
+  {% endif %}
+
+  {% if page.help %}
+    <div class="container help-region">
+      {{ page.help }}
+    </div>
+  {% endif %}
+
+  <main id="main-content" class="site-main" tabindex="-1">
+    <div class="container content-layout{{ page.sidebar ? ' content-layout--with-sidebar' }}">
+      <div class="main-content">
+        {{ page.content }}
+      </div>
+
+      {% if page.sidebar %}
+        <aside class="sidebar" aria-label="{{ 'Conteúdo complementar'|t }}">
+          {{ page.sidebar }}
+        </aside>
+      {% endif %}
+    </div>
+  </main>
+
+  {% if page.footer or page.footer_legal %}
+    <footer class="site-footer" role="contentinfo">
+      {% if page.footer %}
+        <div class="container site-footer__main">
+          {{ page.footer }}
+        </div>
+      {% endif %}
+
+      {% if page.footer_legal %}
+        <div class="site-footer__legal">
+          <div class="container">
+            {{ page.footer_legal }}
+          </div>
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
+</div>

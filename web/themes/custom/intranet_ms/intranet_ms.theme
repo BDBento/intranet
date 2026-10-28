@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks and preprocess functions for the Intranet MS theme.
+ */
+
+declare(strict_types=1);

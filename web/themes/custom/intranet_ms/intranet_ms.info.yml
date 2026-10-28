@@ -1,0 +1,28 @@
+name: Intranet MS
+type: theme
+description: 'Tema institucional da Intranet do Governo do Estado de Mato Grosso do Sul.'
+package: Governo de Mato Grosso do Sul
+core_version_requirement: ^11
+base theme: false
+version: 0.2.0
+
+libraries:
+  - intranet_ms/global
+
+regions:
+  utility_bar: 'Barra de utilidades'
+  header: 'Cabeçalho'
+  primary_menu: 'Menu principal'
+  home_intro: 'Início - apresentação'
+  home_search: 'Início - busca'
+  quick_access: 'Início - acessos rápidos'
+  announcements: 'Início - comunicados'
+  home_news: 'Início - notícias'
+  home_events: 'Início - agenda'
+  breadcrumb: 'Trilha de navegação'
+  highlighted: 'Destaque do sistema'
+  help: 'Ajuda'
+  content: 'Conteúdo principal'
+  sidebar: 'Barra lateral'
+  footer: 'Rodapé'
+  footer_legal: 'Rodapé legal'

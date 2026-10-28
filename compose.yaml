@@ -1,0 +1,42 @@
+name: intranet-drupal-local
+
+services:
+  drupal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1::80"
+    environment:
+      DRUPAL_DB_HOST: db
+      DRUPAL_DB_NAME: ${DB_NAME:-drupal}
+      DRUPAL_DB_USER: ${DB_USER:-drupal}
+      DRUPAL_DB_PASSWORD: ${DB_PASSWORD:-local_dev_password}
+    volumes:
+      - drupal_sites:/opt/drupal/web/sites
+      - ./web/modules/custom:/opt/drupal/web/modules/custom
+      - ./web/themes/custom:/opt/drupal/web/themes/custom
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:-drupal}
+      MARIADB_USER: ${DB_USER:-drupal}
+      MARIADB_PASSWORD: ${DB_PASSWORD:-local_dev_password}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-local_root_password}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  db_data:
+  drupal_sites:

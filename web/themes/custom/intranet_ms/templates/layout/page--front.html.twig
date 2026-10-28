@@ -1,0 +1,184 @@
+{#
+/**
+ * @file
+ * Front page template for the Intranet MS theme.
+ */
+#}
+<div class="site-shell front-page">
+  <a class="skip-link visually-hidden-focusable" href="#main-content">
+    {{ 'Ir para o conteúdo principal'|t }}
+  </a>
+
+  <header class="site-header" role="banner">
+    {% if page.utility_bar %}
+      <div class="utility-bar">
+        <div class="container utility-bar__inner">
+          {{ page.utility_bar }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="container site-header__inner">
+      <div class="site-header__brand">
+        {{ page.header }}
+      </div>
+
+      {% if page.primary_menu %}
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="menu-toggle__icon" aria-hidden="true"></span>
+          <span>{{ 'Menu'|t }}</span>
+        </button>
+      {% endif %}
+    </div>
+
+    {% if page.primary_menu %}
+      <nav id="primary-navigation" class="primary-navigation" aria-label="{{ 'Navegação principal'|t }}">
+        <div class="container">
+          {{ page.primary_menu }}
+        </div>
+      </nav>
+    {% endif %}
+  </header>
+
+  {% if page.highlighted %}
+    <div class="container highlighted-region">
+      {{ page.highlighted }}
+    </div>
+  {% endif %}
+
+  <main id="main-content" class="home-main" tabindex="-1">
+    <section class="home-hero" aria-labelledby="home-welcome-title">
+      <div class="container home-hero__grid">
+        <div class="home-hero__content">
+          {% if page.home_intro %}
+            {{ page.home_intro }}
+          {% else %}
+            <p class="home-eyebrow">{{ 'Governo de Mato Grosso do Sul'|t }}</p>
+            <h1 id="home-welcome-title">{{ 'Bem-vindo à Intranet MS'|t }}</h1>
+            <p class="home-hero__lead">
+              {{ 'Informações, serviços e ferramentas para apoiar o trabalho dos servidores públicos.'|t }}
+            </p>
+          {% endif %}
+        </div>
+
+        <div class="home-search" aria-label="{{ 'Busca da intranet'|t }}">
+          {% if page.home_search %}
+            {{ page.home_search }}
+          {% else %}
+            <p class="home-empty-state">
+              {{ 'A busca será disponibilizada após a configuração do bloco correspondente.'|t }}
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <div class="container home-sections">
+      <section class="home-section" aria-labelledby="quick-access-title">
+        <div class="home-section__heading">
+          <div>
+            <p class="home-eyebrow">{{ 'Serviços'|t }}</p>
+            <h2 id="quick-access-title">{{ 'Acessos rápidos'|t }}</h2>
+          </div>
+        </div>
+
+        {% if page.quick_access %}
+          {{ page.quick_access }}
+        {% else %}
+          <div class="quick-access-grid" aria-label="{{ 'Exemplos de categorias para configuração'|t }}">
+            {% set quick_access_items = [
+              {'title': 'Sistemas corporativos'|t, 'description': 'Aplicações utilizadas no dia a dia.'|t},
+              {'title': 'Gestão de pessoas'|t, 'description': 'Serviços e informações funcionais.'|t},
+              {'title': 'Documentos e normas'|t, 'description': 'Manuais, formulários e legislação.'|t},
+              {'title': 'Suporte de TI'|t, 'description': 'Atendimento e orientação técnica.'|t}
+            ] %}
+            {% for item in quick_access_items %}
+              <article class="quick-access-card quick-access-card--placeholder">
+                <span class="quick-access-card__icon" aria-hidden="true">{{ loop.index }}</span>
+                <div>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.description }}</p>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+          <p class="home-config-note">
+            {{ 'Itens demonstrativos. Substitua-os por blocos de acesso rápido no painel do Drupal.'|t }}
+          </p>
+        {% endif %}
+      </section>
+
+      <div class="home-dashboard-grid">
+        <section class="home-section home-panel" aria-labelledby="announcements-title">
+          <div class="home-section__heading">
+            <div>
+              <p class="home-eyebrow">{{ 'Fique atento'|t }}</p>
+              <h2 id="announcements-title">{{ 'Comunicados'|t }}</h2>
+            </div>
+          </div>
+
+          {% if page.announcements %}
+            {{ page.announcements }}
+          {% else %}
+            <p class="home-empty-state">{{ 'Nenhum comunicado publicado até o momento.'|t }}</p>
+          {% endif %}
+        </section>
+
+        <section class="home-section home-panel" aria-labelledby="events-title">
+          <div class="home-section__heading">
+            <div>
+              <p class="home-eyebrow">{{ 'Programação'|t }}</p>
+              <h2 id="events-title">{{ 'Agenda'|t }}</h2>
+            </div>
+          </div>
+
+          {% if page.home_events %}
+            {{ page.home_events }}
+          {% else %}
+            <p class="home-empty-state">{{ 'Nenhum evento cadastrado para os próximos dias.'|t }}</p>
+          {% endif %}
+        </section>
+      </div>
+
+      <section class="home-section home-news" aria-labelledby="news-title">
+        <div class="home-section__heading">
+          <div>
+            <p class="home-eyebrow">{{ 'Informação'|t }}</p>
+            <h2 id="news-title">{{ 'Notícias da intranet'|t }}</h2>
+          </div>
+        </div>
+
+        {% if page.home_news %}
+          {{ page.home_news }}
+        {% endif %}
+
+        <div class="home-news__content">
+          {{ page.content }}
+        </div>
+      </section>
+    </div>
+  </main>
+
+  {% if page.footer or page.footer_legal %}
+    <footer class="site-footer" role="contentinfo">
+      {% if page.footer %}
+        <div class="container site-footer__main">
+          {{ page.footer }}
+        </div>
+      {% endif %}
+
+      {% if page.footer_legal %}
+        <div class="site-footer__legal">
+          <div class="container">
+            {{ page.footer_legal }}
+          </div>
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
+</div>

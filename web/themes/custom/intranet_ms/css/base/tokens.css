@@ -1,0 +1,68 @@
+/**
+ * Intranet MS design tokens.
+ *
+ * This is the single source of truth for the theme's visual values. The
+ * initial palette is an accessible institutional baseline and must be
+ * reconciled with the official MS Design System source when it is provided.
+ */
+:root {
+  --ms-color-primary-50: #eef7fb;
+  --ms-color-primary-100: #d7ebf5;
+  --ms-color-primary-500: #0877a8;
+  --ms-color-primary-700: #005a85;
+  --ms-color-primary-800: #004766;
+  --ms-color-primary-900: #00364e;
+
+  --ms-color-secondary-100: #e7f3e9;
+  --ms-color-secondary-500: #2f7d3d;
+  --ms-color-secondary-700: #235f2e;
+
+  --ms-color-neutral-0: #ffffff;
+  --ms-color-neutral-50: #f7f8f9;
+  --ms-color-neutral-100: #eef0f2;
+  --ms-color-neutral-200: #d9dde1;
+  --ms-color-neutral-500: #66717c;
+  --ms-color-neutral-700: #34404b;
+  --ms-color-neutral-900: #17212b;
+
+  --ms-color-info: #0969a5;
+  --ms-color-success: #237a3b;
+  --ms-color-warning: #9a6700;
+  --ms-color-danger: #b42318;
+
+  --ms-color-text: var(--ms-color-neutral-900);
+  --ms-color-text-muted: var(--ms-color-neutral-700);
+  --ms-color-link: var(--ms-color-primary-700);
+  --ms-color-link-hover: var(--ms-color-primary-900);
+  --ms-color-border: var(--ms-color-neutral-200);
+  --ms-color-focus: #ffbf47;
+  --ms-color-surface: var(--ms-color-neutral-0);
+  --ms-color-surface-subtle: var(--ms-color-neutral-50);
+
+  --ms-font-family-base: "Open Sans", Arial, sans-serif;
+  --ms-font-family-heading: "Open Sans", Arial, sans-serif;
+  --ms-font-size-xs: 0.75rem;
+  --ms-font-size-sm: 0.875rem;
+  --ms-font-size-md: 1rem;
+  --ms-font-size-lg: 1.125rem;
+  --ms-font-size-xl: 1.5rem;
+  --ms-font-size-2xl: clamp(1.75rem, 4vw, 2.5rem);
+  --ms-line-height-tight: 1.25;
+  --ms-line-height-base: 1.6;
+
+  --ms-space-1: 0.25rem;
+  --ms-space-2: 0.5rem;
+  --ms-space-3: 0.75rem;
+  --ms-space-4: 1rem;
+  --ms-space-5: 1.5rem;
+  --ms-space-6: 2rem;
+  --ms-space-7: 3rem;
+  --ms-space-8: 4rem;
+
+  --ms-radius-sm: 0.25rem;
+  --ms-radius-md: 0.5rem;
+  --ms-shadow-sm: 0 1px 3px rgb(23 33 43 / 12%);
+  --ms-shadow-md: 0 8px 24px rgb(23 33 43 / 12%);
+  --ms-container-width: 75rem;
+  --ms-transition-fast: 160ms ease;
+}

@@ -1,0 +1,31 @@
+.site-footer {
+  color: var(--ms-color-neutral-0);
+  background: var(--ms-color-primary-900);
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+.site-footer__main {
+  display: grid;
+  gap: var(--ms-space-6);
+  padding-block: var(--ms-space-7);
+}
+
+.site-footer__legal {
+  padding-block: var(--ms-space-4);
+  background: rgb(0 0 0 / 20%);
+  font-size: var(--ms-font-size-sm);
+}
+
+.site-footer p:last-child,
+.site-footer ul:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 48rem) {
+  .site-footer__main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

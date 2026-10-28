@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ms-color-text);
+  background: var(--ms-color-surface-subtle);
+  font-family: var(--ms-font-family-base);
+  font-size: var(--ms-font-size-md);
+  line-height: var(--ms-line-height-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--ms-color-link);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--ms-color-link-hover);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ms-color-focus);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: 0 0.65em;
+  color: var(--ms-color-neutral-900);
+  font-family: var(--ms-font-family-heading);
+  line-height: var(--ms-line-height-tight);
+}
+
+h1 {
+  font-size: var(--ms-font-size-2xl);
+}
+
+h2 {
+  font-size: var(--ms-font-size-xl);
+}
+
+p,
+ul,
+ol {
+  margin-block: 0 1em;
+}
+
+.visually-hidden-focusable:not(:focus):not(:active) {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  z-index: 1000;
+  inset: var(--ms-space-4) auto auto var(--ms-space-4);
+  padding: var(--ms-space-3) var(--ms-space-4);
+  color: var(--ms-color-neutral-900);
+  background: var(--ms-color-focus);
+  border-radius: var(--ms-radius-sm);
+  font-weight: 700;
+}
